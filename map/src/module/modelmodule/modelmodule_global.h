@@ -1,0 +1,10 @@
+﻿#ifndef MODELMODULE_GLOBAL_H
+#define MODELMODULE_GLOBAL_H
+#include <QtCore/qglobal.h>
+
+#if defined(MODELMODULE_LIBRARY)
+#define MODELMODULE_EXPORT Q_DECL_EXPORT
+#else
+#define MODELMODULE_EXPORT Q_DECL_IMPORT
+#endif
+#endif

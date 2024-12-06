@@ -1,0 +1,8 @@
+﻿{
+    "author" : "lrl",
+    "date" : "2024/07/01",
+    "name" : "simulationplugin",
+    "version" : "1.0.0",
+    "des" : "仿真模拟插件",
+    "dependencies" : []
+}

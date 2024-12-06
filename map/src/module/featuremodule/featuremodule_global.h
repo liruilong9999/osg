@@ -1,0 +1,10 @@
+﻿#ifndef FEATUREMODULE_GLOBAL_H
+#define FEATUREMODULE_GLOBAL_H
+#include <QtCore/qglobal.h>
+
+#if defined(FEATUREMODULE_LIBRARY)
+#define FEATUREMODULE_EXPORT Q_DECL_EXPORT
+#else
+#define FEATUREMODULE_EXPORT Q_DECL_IMPORT
+#endif
+#endif

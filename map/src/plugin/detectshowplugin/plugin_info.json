@@ -1,0 +1,8 @@
+﻿{
+    "author" : "lrl",
+    "date" : "2024/07/01",
+    "name" : "modelbuildplugin",
+    "version" : "1.0.0",
+    "des" : "模型生成插件",
+    "dependencies" : []
+}

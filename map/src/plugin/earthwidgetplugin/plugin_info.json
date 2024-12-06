@@ -1,0 +1,8 @@
+﻿{
+    "author" : "lrl",
+    "date" : "2024/08/07",
+    "name" : "earthwidgetplugin",
+    "version" : "1.0.0",
+    "des" : "三位地图显示插件",
+    "dependencies" : []
+}

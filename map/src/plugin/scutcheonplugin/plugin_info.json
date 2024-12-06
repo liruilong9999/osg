@@ -1,0 +1,8 @@
+﻿{
+    "author" : "lrl",
+    "date" : "2024/07/01",
+    "name" : "weatherplugin",
+    "version" : "1.0.0",
+    "des" : "天气生成插件",
+    "dependencies" : []
+}

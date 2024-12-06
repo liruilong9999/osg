@@ -1,0 +1,10 @@
+﻿#ifndef VIEWERMODULE_GLOBAL_H
+#define VIEWERMODULE_GLOBAL_H
+#include <QtCore/qglobal.h>
+
+#if defined(VIEWERMODULE_LIBRARY)
+#define VIEWERMODULE_EXPORT Q_DECL_EXPORT
+#else
+#define VIEWERMODULE_EXPORT Q_DECL_IMPORT
+#endif
+#endif
