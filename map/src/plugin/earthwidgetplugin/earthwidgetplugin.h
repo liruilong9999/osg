@@ -3,15 +3,15 @@
 #include <QObject>
 #include <QtPlugin>
 #include <QAction>
-#include <lib/pluginmanager/plugininterface.h>
+#include <common/IPlugin.h>
 
 class EarthWidget;
 class EarthWidgetPlugin : public QObject,
-                          public PluginInterface
+                          public IPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "EarthWidgetPlugin" FILE "plugin_info.json") // QT5.0 引入
-    Q_INTERFACES(PluginInterface)
+    Q_INTERFACES(IPlugin)
 public:
     explicit EarthWidgetPlugin(QObject * parent = nullptr);
     virtual QString getname() override;

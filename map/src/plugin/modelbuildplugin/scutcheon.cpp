@@ -9,8 +9,7 @@
 #include <osgEarth/MapNode>
 #include <osgEarth/ElevationQuery>
 
-#include <module/nodemodule/nodemodule.h>
-#include <module/viewermodule/viewermodule.h>
+#include <mapbase/mapbase.h>
 
 #include "scutcheon.h"
 

@@ -5,6 +5,7 @@ class QMainWindow;
 class QString;
 class QAction;
 class QMenuBar;
+class QGridLayout;
 
 class IAppView
 {
@@ -20,6 +21,8 @@ public:
 
     // 获取主窗口
     virtual QMainWindow * getMainWindow() = 0;
+
+    virtual QGridLayout * getLayout() = 0;
 
     // 创建菜单栏
     virtual void createMenuBar(QMenuBar * menuBar) = 0;

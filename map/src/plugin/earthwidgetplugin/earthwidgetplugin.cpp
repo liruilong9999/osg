@@ -1,18 +1,15 @@
 ﻿#include <QDebug>
-#include <lib/appskeleton/appskeleton.h>
-#include <lib/appskeleton/ipluginview.h>
-#include <module/mapmodule/mapmodule.h>
-#include <module/modelmodule/modelmodule.h>
-#include <module/nodemodule/nodemodule.h>
+#include <QGridLayout>
+#include <iappskeleton/iappview.h>
+#include <lbase/lbase.h>
+#include <mapbase/mapbase.h>
 #include "earthwidgetplugin.h"
 #include "earthwidget.h"
 
 EarthWidgetPlugin::EarthWidgetPlugin(QObject * parent)
     : QObject(parent)
 {
-    m_earthWidget     = new EarthWidget;
-    m_addHeightAction = new QAction(QStringLiteral("添加高程数据"));
-    IPluginView::getInstance().getMainWindow()->getLayout()->addWidget(m_earthWidget);
+
 }
 
 QString EarthWidgetPlugin::getname()
@@ -22,10 +19,21 @@ QString EarthWidgetPlugin::getname()
 
 bool EarthWidgetPlugin::init()
 {
+    m_earthWidget      = new EarthWidget;
+    m_addHeightAction  = new QAction(QStringLiteral("添加高程数据"));
+    IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
+    if (baseObj)
+    {
+        baseObj->getLayout()->addWidget(m_earthWidget);
+    }
     if (m_addHeightAction)
     {
         connect(m_addHeightAction, &QAction::triggered, this, &EarthWidgetPlugin::addHeight);
-        IPluginView::getInstance().registerAction(QStringLiteral("地图"), QStringLiteral("高程"), m_addHeightAction);
+        IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
+		if(baseObj)
+        {
+            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("高程"), m_addHeightAction);
+		}
     }
     return true;
 }

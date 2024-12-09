@@ -4,19 +4,18 @@ include(${ROOT_DIR}/cmake/module.cmake)
 # 获取文件名称
 set(AbsolutePathProject ${CMAKE_CURRENT_SOURCE_DIR})
 get_filename_component(ProjectName ${AbsolutePathProject} NAME)
-
 # Qt 库
-set(QT_LIBRARY_LIST "Core" "Gui" "Widgets" )
+set(QT_LIBRARY_LIST "Core")
 
 # 链接osg库
 #set(OSG_LIBRARY_LIST osgDB osgGA osgViewer osg OpenThreads osgFX osgUtil osgQOpenGL osgSim osgParticle osgManipulator osgEarth)
+set(OSG_LIBRARY_LIST osgDBd osgGAd osgViewerd osgd OpenThreadsd osgFXd osgUtild osgQOpenGLd osgSimd osgParticled osgManipulatord osgEarthd)
 
-# 链接库
-set(SELF_LIBRARY_LIST "lbase" "mapbase")
+# 链接自身库
+set(SELF_LIBRARY_LIST "lbase")
 
 # 预编译
-add_compile_definitions(WEATHERPLUGIN_LIBRARY) 
+add_compile_definitions(MAPBASE_LIBRARY)
 
-# 创建项目
-CreateTarget(${ProjectName} "Dll" "Plugin") 
-   
+# 创建项目 
+CreateTarget(${ProjectName} "Dll")

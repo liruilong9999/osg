@@ -5,15 +5,15 @@
 #include <QObject>
 #include <QtPlugin>
 #include <QAction>
-#include <lib/pluginmanager/plugininterface.h>
+#include <common/IPlugin.h>
 
 class ModelBuild;
 class DetectShowPlugin : public QObject,
-                         public PluginInterface
+                         public IPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "modelbuildplugin" FILE "plugin_info.json") // QT5.0 引入
-    Q_INTERFACES(PluginInterface)
+    Q_INTERFACES(IPlugin)
 public:
     explicit DetectShowPlugin(QObject * parent = 0);
     virtual QString getname() override;

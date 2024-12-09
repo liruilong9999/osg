@@ -3,7 +3,7 @@
 #include <vector>
 #include <osgEarth/ImageLayer>
 
-#include <singleton/TSingleton.hpp>
+#include <common/TSingleton.hpp>
 #include <osgEarth/GeoTransform>
 #include <osgGA/GUIEventHandler>
 #include <osgViewer/Viewer>

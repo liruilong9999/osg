@@ -6,12 +6,8 @@
 #include <osgEarth/ElevationQuery>
 #include <osgEarth/EarthManipulator>
 
-#include <module/nodemodule/nodemodule.h>
-#include <module/viewermodule/viewermodule.h>
-#include <module/layermodule/layermodule.h>
-#include <module/mapmodule/mapmodule.h>
-
-#include <lib/leventbus/leventbus.h>
+#include <lbase/lbase.h>
+#include <mapbase/mapbase.h>
 
 #include "earthwidget.h"
 
@@ -77,5 +73,5 @@ void EarthWidget::initializedSlots()
     vp.setFocalPoint(osgEarth::GeoPoint(NodeModule::getInstance()->getRootMapNode()->getMap()->getSRS(), 110, 25, 100000));
     em->setViewpoint(vp); // 设置初始视角和朝向
 
-    LEventBus::getInstance()->publish("VIEW_INITIALIZED", QVariant::fromValue(this));
+    LEventBus::instance().publish("VIEW_INITIALIZED", QVariant::fromValue(this));
 }

@@ -7,10 +7,22 @@
 		{
             "name": "pluginb",
             "isUsed": "1"
+        },
+		{
+            "name": "detectshowplugin",
+            "isUsed": "1"
         },	
 		{
             "name": "appskeletonplugin",
             "isUsed": "1"
-        }		
+        },
+        {
+            "name": "earthwidgetplugin",
+            "isUsed": "1"
+        },
+        {
+            "name": "gridctrlplugin",
+            "isUsed": "1"
+        }
     ]
 }

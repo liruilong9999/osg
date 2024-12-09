@@ -1,5 +1,5 @@
 ﻿#include <QDebug>
-#include <iappskeleton/iappskeleton.h>
+#include <iappskeleton/iappview.h>
 #include <lbase/lbase.h>
 #include <QAction>
 
@@ -20,19 +20,21 @@ QString DetectShowPlugin::getname()
 
 bool DetectShowPlugin::init()
 {
-    if (m_actionAdd)
+    IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
+    if (baseObj)
     {
-        connect(m_actionAdd, &QAction::triggered, this, &DetectShowPlugin::addSlot);
-        IPluginView::getInstance().registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionAdd);
+        if (m_actionAdd)
+        {
+            connect(m_actionAdd, &QAction::triggered, this, &DetectShowPlugin::addSlot);
+            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionAdd);
+        }
+        if (m_actionRemove)
+        {
+            connect(m_actionRemove, &QAction::triggered, this, &DetectShowPlugin::removeSlot);
+            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionRemove);
+        }
     }
-    if (m_actionRemove)
-    {
-        connect(m_actionRemove, &QAction::triggered, this, &DetectShowPlugin::removeSlot);
-        IPluginView::getInstance().registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionRemove);
-    }
-    LEventBus::getInstance()->subscribe("VIEW_INITIALIZED", [this](const QVariant & data) {
-        m_detectShow = new DetectShow;
-    });
+    LEventBus::instance().subscribe("VIEW_INITIALIZED", SLOT(showDetect), this);
     return true;
 }
 
@@ -51,4 +53,9 @@ void DetectShowPlugin::removeSlot()
 {
     if (m_detectShow)
         m_detectShow->remove();
+}
+
+void DetectShowPlugin::showDetect(QVariant & var)
+{
+    m_detectShow = new DetectShow;
 }

@@ -1,5 +1,6 @@
 ﻿#include <QDebug>
-#include <lib/appskeleton/ipluginview.h>
+#include <iappskeleton/iappview.h>
+#include <lbase/lbase.h>
 #include <QAction>
 
 #include "modelbuildplugin.h"
@@ -20,15 +21,19 @@ QString DetectShowPlugin::getname()
 
 bool DetectShowPlugin::init()
 {
-    if (m_actionBuildModel)
+    IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
+    if (baseObj)
     {
-        connect(m_actionBuildModel, &QAction::triggered, this, &DetectShowPlugin::addModelSlot);
-        IPluginView::getInstance().registerAction(QStringLiteral("视图"), QStringLiteral("模型"), m_actionBuildModel);
-    }
-    if (m_actionRemoveModel)
-    {
-        connect(m_actionRemoveModel, &QAction::triggered, this, &DetectShowPlugin::removeModelSlot);
-        IPluginView::getInstance().registerAction(QStringLiteral("视图"), QStringLiteral("模型"), m_actionRemoveModel);
+        if (m_actionBuildModel)
+        {
+            connect(m_actionBuildModel, &QAction::triggered, this, &DetectShowPlugin::addModelSlot);
+            baseObj->registerAction(QStringLiteral("视图"), QStringLiteral("模型"), m_actionBuildModel);
+        }
+        if (m_actionRemoveModel)
+        {
+            connect(m_actionRemoveModel, &QAction::triggered, this, &DetectShowPlugin::removeModelSlot);
+            baseObj->registerAction(QStringLiteral("视图"), QStringLiteral("模型"), m_actionRemoveModel);
+        }
     }
     return true;
 }

@@ -1,5 +1,6 @@
 ﻿#include <QDebug>
-#include <lib/appskeleton/ipluginview.h>
+#include <iappskeleton/iappview.h>
+#include <lbase/lbase.h>
 #include "gridctrlplugin.h"
 #include "gridctrl.h"
 
@@ -18,7 +19,11 @@ QString GridCtrlPlugin::getname()
 bool GridCtrlPlugin::init()
 {
     connect(m_action, &QAction::triggered, this, &GridCtrlPlugin::gridSlots);
-    IPluginView::getInstance().registerAction(QStringLiteral("视图"), QStringLiteral("界面显示"), m_action);
+    IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
+    if (baseObj)
+    {
+        baseObj->registerAction(QStringLiteral("视图"), QStringLiteral("界面显示"), m_action);
+    }
     return true;
 }
 

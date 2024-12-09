@@ -40,6 +40,11 @@ QMainWindow * IPluginView::getMainWindow()
     return m_mainWindow;
 }
 
+QGridLayout * IPluginView::getLayout()
+{
+    return qobject_cast<AppSkeleton *>(m_mainWindow)->getLayout();
+}
+
 // 创建菜单栏
 void IPluginView::createMenuBar(QMenuBar * menuBar)
 {
@@ -57,8 +62,8 @@ void IPluginView::createMenuBar(QMenuBar * menuBar)
     }
 }
 
-IPluginView::IPluginView(QObject *parent)
-	:QObject(parent)
+IPluginView::IPluginView(QObject * parent)
+    : QObject(parent)
 {
     m_mainWindow = new AppSkeleton;
 }
@@ -68,6 +73,6 @@ IPluginView::~IPluginView()
     if (m_mainWindow)
     {
         delete m_mainWindow;
-		m_mainWindow = nullptr;
+        m_mainWindow = nullptr;
     }
 }

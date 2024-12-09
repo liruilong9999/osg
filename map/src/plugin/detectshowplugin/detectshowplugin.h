@@ -13,7 +13,7 @@ class DetectShowPlugin : public QObject,
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "modelbuildplugin" FILE "plugin_info.json") // QT5.0 引入
-    Q_INTERFACES(PluginInterface)
+    Q_INTERFACES(IPlugin)
 public:
     explicit DetectShowPlugin(QObject * parent = 0);
     virtual QString getname() override;
@@ -22,6 +22,7 @@ public:
 public slots:
     void addSlot();
     void removeSlot();
+	void showDetect(QVariant & var);
 
 private:
     QAction *    m_actionAdd{nullptr};    // 生成模型按钮

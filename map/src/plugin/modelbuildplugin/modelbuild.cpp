@@ -1,6 +1,4 @@
 ﻿
-#include <module/modelmodule/modelmodule.h>
-#include <module/nodemodule/nodemodule.h>
 #include <osgText/Text>
 #include <osg/MatrixTransform>
 #include <osg/AutoTransform>
@@ -8,6 +6,8 @@
 #include <osg/Array>
 #include <osg/Drawable>
 #include <osg/BoundingSphere>
+
+#include <mapbase/mapbase.h>
 
 #include "modelbuild.h"
 

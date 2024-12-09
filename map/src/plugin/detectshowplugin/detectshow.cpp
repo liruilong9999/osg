@@ -5,8 +5,7 @@
 #include <module/mapmodule/mapmodule.h>
 #include <module/featuremodule/featuremodule.h>
 #include <module/modelmodule/modelmodule.h>
-#include <lib/leventbus/leventbus.h>
-#include <lib/llog/llog.h>
+#include <lbase/lbase.h>
 
 #include <osgDB/ReadFile>
 

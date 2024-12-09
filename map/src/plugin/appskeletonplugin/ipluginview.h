@@ -43,6 +43,8 @@ public:
     // 获取主窗口
     QMainWindow * getMainWindow() override;
 
+    QGridLayout * getLayout() override;
+
     // 创建菜单栏
     void createMenuBar(QMenuBar * menuBar) override;
 
