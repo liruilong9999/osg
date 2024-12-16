@@ -1,4 +1,4 @@
-﻿
+
 #ifndef DETECTSHOWPLUGIN_H
 #define DETECTSHOWPLUGIN_H
 
@@ -22,7 +22,7 @@ public:
 public slots:
     void addSlot();
     void removeSlot();
-	void showDetect(QVariant & var);
+	Q_INVOKABLE void showDetect(const QVariant & var);
 
 private:
     QAction *    m_actionAdd{nullptr};    // 生成模型按钮

@@ -1,4 +1,4 @@
-﻿#ifndef MOUSEPOINTINFO_H
+#ifndef MOUSEPOINTINFO_H
 #define MOUSEPOINTINFO_H
 #include <vector>
 #include <osgEarth/ImageLayer>

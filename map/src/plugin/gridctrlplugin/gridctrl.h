@@ -1,4 +1,4 @@
-﻿#ifndef GRIDCTRL_H
+#ifndef GRIDCTRL_H
 #define GRIDCTRL_H
 
 #include <QObject>

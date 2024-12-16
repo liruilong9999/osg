@@ -1,4 +1,4 @@
-﻿#include <QDebug>
+#include <QDebug>
 #include <QGridLayout>
 #include <iappskeleton/iappview.h>
 #include <lbase/lbase.h>
@@ -9,18 +9,18 @@
 EarthWidgetPlugin::EarthWidgetPlugin(QObject * parent)
     : QObject(parent)
 {
+    m_earthWidget = new EarthWidget;
 
 }
 
 QString EarthWidgetPlugin::getname()
 {
-    return QStringLiteral("地图显示插件");
+    return QString("地图显示插件");
 }
 
 bool EarthWidgetPlugin::init()
 {
-    m_earthWidget      = new EarthWidget;
-    m_addHeightAction  = new QAction(QStringLiteral("添加高程数据"));
+    m_addHeightAction  = new QAction(QString("添加高程数据"));
     IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
     if (baseObj)
     {
@@ -32,7 +32,7 @@ bool EarthWidgetPlugin::init()
         IAppView * baseObj = dynamic_cast<IAppView *>(ObjectRegistry::instance().getObject("IPluginView"));
 		if(baseObj)
         {
-            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("高程"), m_addHeightAction);
+            baseObj->registerAction(QString("地图"), QString("高程"), m_addHeightAction);
 		}
     }
     return true;

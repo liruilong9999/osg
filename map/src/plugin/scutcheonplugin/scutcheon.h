@@ -1,4 +1,4 @@
-﻿#ifndef Scutcheon_H
+#ifndef Scutcheon_H
 #define Scutcheon_H
 #include <vector>
 #include <osgEarth/ImageLayer>

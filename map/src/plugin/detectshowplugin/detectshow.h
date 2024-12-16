@@ -1,4 +1,4 @@
-﻿#ifndef DETECTSHOW_H
+#ifndef DETECTSHOW_H
 #define DETECTSHOW_H
 
 #include <string>

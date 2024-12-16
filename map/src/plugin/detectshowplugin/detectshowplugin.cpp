@@ -1,4 +1,4 @@
-﻿#include <QDebug>
+#include <QDebug>
 #include <iappskeleton/iappview.h>
 #include <lbase/lbase.h>
 #include <QAction>
@@ -9,13 +9,13 @@
 DetectShowPlugin::DetectShowPlugin(QObject * parent)
     : QObject(parent)
 {
-    m_actionAdd    = new QAction(QStringLiteral("添加包络"), this);
-    m_actionRemove = new QAction(QStringLiteral("移除包络"), this);
+    m_actionAdd    = new QAction(QString("添加包络"), this);
+    m_actionRemove = new QAction(QString("移除包络"), this);
 }
 
 QString DetectShowPlugin::getname()
 {
-    return QStringLiteral("显示探测范围");
+    return QString("显示探测范围");
 }
 
 bool DetectShowPlugin::init()
@@ -26,12 +26,12 @@ bool DetectShowPlugin::init()
         if (m_actionAdd)
         {
             connect(m_actionAdd, &QAction::triggered, this, &DetectShowPlugin::addSlot);
-            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionAdd);
+            baseObj->registerAction(QString("地图"), QString("显示"), m_actionAdd);
         }
         if (m_actionRemove)
         {
             connect(m_actionRemove, &QAction::triggered, this, &DetectShowPlugin::removeSlot);
-            baseObj->registerAction(QStringLiteral("地图"), QStringLiteral("显示"), m_actionRemove);
+            baseObj->registerAction(QString("地图"), QString("显示"), m_actionRemove);
         }
     }
     LEventBus::instance().subscribe("VIEW_INITIALIZED", SLOT(showDetect), this);
@@ -55,7 +55,7 @@ void DetectShowPlugin::removeSlot()
         m_detectShow->remove();
 }
 
-void DetectShowPlugin::showDetect(QVariant & var)
+void DetectShowPlugin::showDetect(const QVariant & var)
 {
     m_detectShow = new DetectShow;
 }

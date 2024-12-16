@@ -1,4 +1,4 @@
-﻿
+
 #include <module/nodemodule/nodemodule.h>
 #include <module/viewermodule/viewermodule.h>
 #include <module/layermodule/layermodule.h>
@@ -50,7 +50,7 @@ void DetectShow::add()
     NodeModule::getInstance()->getRootNode()->addChild(modelNode.get());
     m_modelList.push_back(modelNode);
 
-    osg::ref_ptr<osg::Node> textNode = LayerModule::getInstance()->addText(120, 30, 0, QStringLiteral("雷达1").toStdString(), "FFFFFF");
+    osg::ref_ptr<osg::Node> textNode = LayerModule::getInstance()->addText(120, 30, 0, QString("雷达1").toStdString(), "FFFFFF");
 
     NodeModule::getInstance()->getRootNode()->addChild(textNode.get());
     m_textList.push_back(textNode);

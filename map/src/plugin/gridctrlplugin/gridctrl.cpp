@@ -1,4 +1,4 @@
-﻿#include <QDebug>
+#include <QDebug>
 
 #include <module/nodemodule/nodemodule.h>
 #include <module/viewermodule/viewermodule.h>

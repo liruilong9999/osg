@@ -1,4 +1,4 @@
-﻿#ifndef EARTHWIDGET_H
+#ifndef EARTHWIDGET_H
 #define EARTHWIDGET_H
 
 #include <QMouseEvent>

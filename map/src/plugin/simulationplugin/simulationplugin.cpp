@@ -1,4 +1,4 @@
-﻿#include <QDebug>
+#include <QDebug>
 #include <lib/appskeleton/ipluginview.h>
 #include <QAction>
 

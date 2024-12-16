@@ -1,4 +1,4 @@
-﻿
+
 #ifndef WEATHERPLUGIN_H
 #define WEATHERPLUGIN_H
 

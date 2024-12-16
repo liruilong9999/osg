@@ -1,4 +1,4 @@
-﻿
+
 #ifndef GRIDCTRLPLUGIN_H
 #define GRIDCTRLPLUGIN_H
 

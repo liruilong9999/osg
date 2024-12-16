@@ -1,4 +1,4 @@
-﻿#include <QDebug>
+#include <QDebug>
 #include <iappskeleton/iappview.h>
 #include <lbase/lbase.h>
 #include <QAction>

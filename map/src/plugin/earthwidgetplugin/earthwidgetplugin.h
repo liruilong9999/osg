@@ -1,4 +1,4 @@
-﻿#ifndef EARTHWIDGETPLUGIN_H
+#ifndef EARTHWIDGETPLUGIN_H
 #define EARTHWIDGETPLUGIN_H
 #include <QObject>
 #include <QtPlugin>

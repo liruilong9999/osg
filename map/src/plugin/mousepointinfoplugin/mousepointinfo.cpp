@@ -1,4 +1,4 @@
-﻿#include <osgDB/ReadFile>
+#include <osgDB/ReadFile>
 #include <osgEarth/ShaderGenerator>
 #include <osgEarth/GeoTransform>
 #include <osgEarth/MapNode>

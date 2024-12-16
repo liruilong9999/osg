@@ -1,4 +1,4 @@
-﻿#ifndef MODELBUILD_H
+#ifndef MODELBUILD_H
 #define MODELBUILD_H
 
 #include <QList>

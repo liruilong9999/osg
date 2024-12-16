@@ -1,4 +1,4 @@
-﻿#include <osgDB/ReadFile>
+#include <osgDB/ReadFile>
 #include <osg/MatrixTransform>
 
 #include <osgEarth/Sky>

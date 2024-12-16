@@ -1,4 +1,4 @@
-﻿
+
 #ifndef MODELBUILDPLUGIN_H
 #define MODELBUILDPLUGIN_H
 

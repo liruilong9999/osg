@@ -1,4 +1,4 @@
-﻿
+
 #ifndef ScutcheonPlugin_H
 #define ScutcheonPlugin_H
 

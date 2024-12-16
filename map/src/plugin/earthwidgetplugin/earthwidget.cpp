@@ -1,4 +1,4 @@
-﻿
+
 #include <osgEarth/MapNode>
 #include <osgEarth/Terrain>
 #include <osgViewer/Viewer>

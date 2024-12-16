@@ -1,4 +1,4 @@
-﻿
+
 #include <osgText/Text>
 #include <osg/MatrixTransform>
 #include <osg/AutoTransform>
